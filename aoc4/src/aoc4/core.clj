@@ -43,9 +43,7 @@
 (defn validate-field [field value validator]
   (if (= value nil) 
     false
-    (let [result (validator value)]
-      (printf "value validation for: %s : %s, %b\n" field value result)
-      result)))
+    (validator value)))
 
 (defn is-valid [passport]
   (->> 
